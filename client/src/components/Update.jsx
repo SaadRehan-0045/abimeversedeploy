@@ -570,7 +570,7 @@ const Update = () => {
   // Memoized display image URL
   const displayImage = useMemo(() => {
     return croppedImage || (formik.values.picture
-      ? `http://localhost:8080/file/${formik.values.picture}`
+      ? `https://abimeversedeploy.vercel.app/file/${formik.values.picture}`
       : "https://images.unsplash.com/photo-1543128639-4cb7e6eeef1b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9pJTIwc2V0dXB8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80");
   }, [croppedImage, formik.values.picture]);
 
@@ -601,7 +601,7 @@ const Update = () => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`http://localhost:8080/posts/${id}`);
+        const response = await axios.get(`https://abimeversedeploy.vercel.app/posts/${id}`);
         if (response.data) {
           formik.setValues({
             title: response.data.title || "",
@@ -798,7 +798,7 @@ const Update = () => {
     
     try {
       const uploadResponse = await axios.post(
-        "http://localhost:8080/file/upload",
+        "https://abimeversedeploy.vercel.app/file/upload",
         data
       );
       formik.setFieldValue("picture", uploadResponse.data.filename);
@@ -863,7 +863,7 @@ const Update = () => {
       }
 
       const response = await axios.put(
-        `http://localhost:8080/posts/${id}`,
+        `https://abimeversedeploy.vercel.app/posts/${id}`,
         postData,
         config
       );
