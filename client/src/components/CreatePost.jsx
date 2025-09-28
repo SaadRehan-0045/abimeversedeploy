@@ -324,7 +324,7 @@ const CreatePost = () => {
 
   // Memoized display image URL
   const displayImage = useMemo(() => {
-    return croppedImage || (formik.values.picture ? `http://localhost:8080/file/${formik.values.picture}` : 'https://images.unsplash.com/photo-1543128639-4cb7e6eeef1b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9pJTIwc2E0dXB8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80');
+    return croppedImage || (formik.values.picture ? `https://abimeversedeploy.vercel.app/file/${formik.values.picture}` : 'https://images.unsplash.com/photo-1543128639-4cb7e6eeef1b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9pJTIwc2E0dXB8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80');
   }, [croppedImage, formik.values.picture]);
 
   // Memoized file validation function
@@ -518,7 +518,7 @@ const CreatePost = () => {
     data.append("file", fileToUpload);
     
     try {
-      const uploadResponse = await axios.post('http://localhost:8080/file/upload', data);
+      const uploadResponse = await axios.post('https://abimeversedeploy.vercel.app/file/upload', data);
       // Update Formik values instead of local state
       formik.setFieldValue('picture', uploadResponse.data.filename);
       formik.setFieldError('picture', '');
@@ -570,7 +570,7 @@ const CreatePost = () => {
         config.headers.Authorization = `Bearer ${authToken}`;
       }
 
-      const response = await axios.post('http://localhost:8080/createpost', postData, config);
+      const response = await axios.post('https://abimeversedeploy.vercel.app/createpost', postData, config);
       
       if (response.data && (response.data.success || response.data._id)) {
         setSnackbar({ open: true, message: 'Post created successfully!', severity: 'success' });
@@ -1109,5 +1109,6 @@ const CreatePost = () => {
     </Layout>
   );
 };
+
 
 export default CreatePost;
