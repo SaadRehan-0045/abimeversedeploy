@@ -8,7 +8,7 @@ import axios from 'axios';
 const API = {
   deleteComment: async (commentId) => {
     try {
-      const response = await axios.delete(`http://localhost:8080/comments/${commentId}`, {
+      const response = await axios.delete(`https://abimeversedeploy.vercel.app/comments/${commentId}`, {
         withCredentials: true
       });
       return { isSuccess: true, data: response.data };
@@ -19,7 +19,7 @@ const API = {
   },
   updateComment: async (commentId, updatedComment) => {
     try {
-      const response = await axios.put(`http://localhost:8080/comments/${commentId}`, {
+      const response = await axios.put(`https://abimeversedeploy.vercel.app/comments/${commentId}`, {
         updatedComment: updatedComment
       }, {
         withCredentials: true
