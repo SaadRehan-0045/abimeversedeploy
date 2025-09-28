@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }) => {
 
   // Configure axios to send cookies with requests
   axios.defaults.withCredentials = true;
-  axios.defaults.baseURL = 'https://abimeversedeploy.vercel.app';
+  axios.defaults.baseURL = 'https://abimeversedeploy-kacmk5md4-saads-projects-6ca3a457.vercel.app';
 
   // Add request interceptor to include auth token
   useEffect(() => {
@@ -228,3 +228,4 @@ export const AuthProvider = ({ children }) => {
   );
 
 };
+
