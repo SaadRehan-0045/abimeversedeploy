@@ -762,7 +762,7 @@ const Login = () => {
       <div className="login-form">
         <div className="app-title">MyAnimeVerse</div>
         <p className="app-subtitle">Your portal to the anime universe</p>
-        <h2>Welcome Back</h2>
+        <h2>Welcome </h2>
         
         {successMessage && <div className="success-message">{successMessage}</div>}
         {errorMessage && <div className="error-message">{errorMessage}</div>}
@@ -834,5 +834,6 @@ const Login = () => {
     </div>
   );
 };
+
 
 export default Login;
