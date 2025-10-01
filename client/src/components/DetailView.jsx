@@ -14,7 +14,7 @@ import Layout from './Layout.jsx';
 const API = {
   getPostById: async (id) => {
     try {
-      const response = await axios.get(`http://localhost:8080/posts/${id}`);
+      const response = await axios.get(`https://abimeversedeploy.vercel.app/posts/${id}`);
       return { isSuccess: true, data: response.data };
     } catch (error) {
       console.error("Error fetching post:", error);
@@ -493,5 +493,6 @@ const DetailView = () => {
     </Layout>
   );
 };
+
 
 export default DetailView;
