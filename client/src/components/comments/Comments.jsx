@@ -10,7 +10,7 @@ import Comment from './Comment';
 const API = {
   getAllComments: async (postId) => {
     try {
-      const response = await axios.get(`http://localhost:8080/comments/${postId}`);
+      const response = await axios.get(`https://abimeversedeploy.vercel.app/comments/${postId}`);
       return { isSuccess: true, data: response.data };
     } catch (error) {
       console.error("Error fetching comments:", error);
@@ -19,7 +19,7 @@ const API = {
   },
   newComment: async (commentData) => {
     try {
-      const response = await axios.post('http://localhost:8080/comments', commentData, {
+      const response = await axios.post('https://abimeversedeploy.vercel.app/comments', commentData, {
         withCredentials: true
       });
       return { isSuccess: true, data: response.data };
